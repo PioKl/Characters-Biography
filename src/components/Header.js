@@ -37,7 +37,7 @@ export default function Header() {
     setDisableIntroStorage(disableIntro);
 
     //W przypadku gdy podany adres strony nie istnieje
-    if (window.location.pathname !== "/") {
+    if (window.location.pathname !== `${process.env.PUBLIC_URL}`) {
       localStorage.setItem("introRefresh", "false");
       setIntroRefreshStorage(false);
     }

@@ -1,0 +1,142 @@
+@import "./Colors.scss";
+@import "./Mixins.scss";
+
+.intro {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  &.--remove {
+    opacity: 0;
+  }
+
+  &.--off {
+    display: none;
+  }
+}
+
+.introButton {
+  all: unset;
+  @include absoluteCenter();
+  z-index: 3;
+  padding: 1rem 3rem;
+  font-size: 3.6rem;
+  letter-spacing: 0.5rem;
+  color: $vivid-sky-blue;
+  border: 0.5rem solid $backgroundColorOne;
+  background-color: $backgroundColorOne;
+  transition: 0.5s ease-in-out;
+  text-shadow: $vivid-sky-blue 0px 0px 2.5rem;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &:hover {
+    text-shadow: 0 0 0.6rem $vivid-sky-blue, 0 0 1.5rem $vivid-sky-blue,
+      -0.2rem 0.1rem 1rem $vivid-sky-blue, 0.2rem 0.1rem 1rem $vivid-sky-blue,
+      0 -0.5rem 2rem $vivid-sky-blue, 0 0.5rem 3rem $vivid-sky-blue;
+
+    -webkit-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+    -moz-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+    box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+  }
+}
+
+.snow {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 2;
+}
+
+.blockOverlay {
+  width: 100%;
+  height: 100vh;
+}
+
+.block {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+  background-repeat: no-repeat;
+}
+
+.block-1 {
+  left: 0;
+}
+
+.block-2 {
+  left: 5%;
+}
+
+.block-3 {
+  left: 10%;
+}
+
+.block-4 {
+  left: 15%;
+}
+
+.block-5 {
+  left: 20%;
+}
+
+.block-6 {
+  left: 25%;
+}
+
+.block-7 {
+  left: 30%;
+}
+
+.block-8 {
+  left: 35%;
+}
+
+.block-9 {
+  left: 40%;
+}
+
+.block-10 {
+  left: 45%;
+}
+
+.block-11 {
+  left: 50%;
+}
+
+.block-12 {
+  left: 55%;
+}
+
+.block-13 {
+  left: 60%;
+}
+
+.block-14 {
+  left: 65%;
+}
+
+.block-15 {
+  left: 70%;
+}
+
+.block-16 {
+  left: 75%;
+}
+
+.block-17 {
+  left: 80%;
+}
+
+.block-18 {
+  left: 85%;
+}
+
+.block-19 {
+  left: 90%;
+}
+
+.block-20 {
+  left: 95%;
+}

@@ -1,0 +1,20 @@
+$rich-black: #051217ff;
+$indigo-dye: #224761ff;
+$prussian-blue: #09283cff;
+$vivid-sky-blue: #48c8eaff;
+$indigo-dye-22: #0b5173ff;
+
+$colorMain: #8efbf8;
+$backgroundColorOne: rgba(80, 208, 237, 0.13);
+$backgroundColorTwo: rgba(72, 199, 234, 0.075);
+
+$gradient-bottom-entry: linear-gradient(
+  180deg,
+  $rich-black,
+  $indigo-dye,
+  $rich-black
+);
+
+:export {
+  vividSkyBlue: $vivid-sky-blue;
+}

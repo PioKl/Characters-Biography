@@ -1,0 +1,134 @@
+@import "./Mixins.scss";
+@import "./Colors.scss";
+@import "./Resolutions.scss";
+
+.loaderContainer {
+  position: absolute;
+  top: 85%;
+  left: 2.5%;
+  @include grid-placeItems();
+
+  @include tablet {
+    top: 80%;
+  }
+
+  @include desktop {
+    top: 79%;
+  }
+
+  @include desktopMedium {
+    top: 75%;
+  }
+
+  /* Modyfikatory komponentu */
+  &.--centered {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &.--static {
+    position: static;
+  }
+
+  &.--mainSite {
+    position: fixed;
+    display: none;
+
+    @include tablet {
+      display: grid;
+      opacity: 0;
+    }
+  }
+
+  &.--biosFakeLoader {
+    display: none;
+
+    @include desktopLarge {
+      display: grid;
+    }
+  }
+}
+.loader {
+  @include grid-placeItems();
+  width: 15rem;
+  height: 15rem;
+  border: 7px solid transparent;
+  border-top: 7px solid $vivid-sky-blue;
+  border-bottom: 7px solid $vivid-sky-blue;
+  border-radius: 50%;
+  animation: rotateAnimation ease-in-out 4s infinite;
+
+  &.--remove {
+    border: none;
+  }
+}
+
+.loaderInside {
+  display: grid;
+  place-items: center;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 7px solid transparent;
+  border-top: 7px solid $vivid-sky-blue;
+  border-bottom: 7px solid $vivid-sky-blue;
+  animation: rotateAnimation linear 4s infinite;
+
+  &.--remove {
+    border: none;
+  }
+}
+
+.loaderLogo {
+  position: absolute;
+  width: 8rem;
+  height: 8rem;
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.circles {
+  position: absolute;
+  height: 20rem;
+  width: 20rem;
+
+  > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: dodgerblue;
+    border-radius: 50%;
+    opacity: 0;
+    animation: growAndFade 10s infinite ease-out;
+  }
+
+  .circle1 {
+    animation-delay: 1s;
+  }
+  .circle2 {
+    animation-delay: 2s;
+  }
+  .circle3 {
+    animation-delay: 3s;
+  }
+}
+
+@keyframes growAndFade {
+  0% {
+    opacity: 0.25;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

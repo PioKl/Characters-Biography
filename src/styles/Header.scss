@@ -1,0 +1,119 @@
+@import "./Mixins.scss";
+@import "./Colors.scss";
+@import "./Resolutions.scss";
+
+.header {
+  background-color: $backgroundColorOne;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  z-index: 3;
+
+  &.--on {
+    transform: translateY(0);
+  }
+
+  &.--off {
+    transform: translateY(-100px);
+  }
+
+  &.--enable {
+    transform: translateY(0);
+  }
+
+  @include tablet {
+    margin-bottom: 4rem;
+  }
+}
+
+.nav {
+  @include flex-center-vert();
+  max-width: 110rem;
+  margin-inline: auto;
+  &__item {
+    position: relative;
+    padding: 0.2rem 2rem;
+    font-size: 1.6rem;
+    color: $colorMain;
+    border: 1px solid $colorMain;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+
+    &:focus-visible {
+      color: $vivid-sky-blue;
+      background-color: $backgroundColorOne;
+    }
+
+    @include desktop {
+      &:hover {
+        color: $vivid-sky-blue;
+        background-color: $backgroundColorOne;
+      }
+    }
+  }
+
+  &__toggleIntroLabel {
+    position: relative;
+    @include flex-center-vert;
+    margin-left: auto;
+    width: 10rem;
+    height: 3rem;
+    color: $colorMain;
+    border: 1px solid $colorMain;
+    border-radius: 34px;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+
+  &__toggleIntroInput {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__toggleIntroIcon {
+    position: absolute;
+    &.--on {
+      color: $colorMain;
+      left: 3px;
+    }
+    &.--off {
+      color: red;
+      right: 3px;
+    }
+    &:before {
+      content: "\f011";
+      font-family: "Font Awesome 5 Free";
+      font-weight: 600;
+    }
+  }
+
+  &__toggleIntroSlider {
+    &::before {
+      position: absolute;
+      content: "";
+      height: 2rem;
+      width: 2rem;
+      left: 2px;
+      bottom: 50%;
+      transform: translateY(50%);
+      background-color: $colorMain;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+      border-radius: 50%;
+      z-index: 1;
+    }
+  }
+
+  &__toggleIntroInput:checked + &__toggleIntroSlider:before {
+    -webkit-transform: translate(7.3rem, 50%);
+    -ms-transform: translate(7.3rem, 50%);
+    transform: translate(7.3rem, 50%);
+  }
+
+  &__toggleIntroName {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

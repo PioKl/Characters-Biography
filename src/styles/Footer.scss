@@ -1,0 +1,37 @@
+@import "./Mixins.scss";
+@import "./Colors.scss";
+@import "./Resolutions.scss";
+
+.footer {
+  @include grid-placeItems();
+  background-color: $backgroundColorOne;
+  padding: 1rem;
+  margin-top: 2rem;
+
+  &.--on {
+    opacity: 1;
+  }
+
+  &.--off {
+    opacity: 0;
+  }
+
+  &.--enable {
+    opacity: 1;
+  }
+
+  @include tablet {
+    margin-top: 4rem;
+  }
+
+  &__socialIconsContainer {
+    z-index: 2;
+  }
+
+  &__icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    filter: invert(100%) sepia(0%) saturate(7500%) hue-rotate(166deg)
+      brightness(101%) contrast(102%);
+  }
+}

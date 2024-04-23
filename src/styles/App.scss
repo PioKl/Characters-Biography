@@ -1,0 +1,26 @@
+@import "./Base.scss";
+@import "./Colors.scss";
+@import "./Resolutions.scss";
+
+.App {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: $gradient-bottom-entry;
+
+  main {
+    width: calc(100% - 2rem);
+    margin-inline: auto;
+    overflow-x: hidden;
+    z-index: 1;
+  }
+
+  &::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url("../images/hexagon.png");
+    opacity: 0.2;
+  }
+}

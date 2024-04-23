@@ -1,0 +1,80 @@
+@import "./Mixins.scss";
+@import "./Colors.scss";
+@import "./Resolutions.scss";
+
+$borderThickness: 6px;
+
+.characterCard {
+  width: inherit;
+  height: 100%;
+}
+
+.imageContainer {
+  position: relative;
+  display: flex;
+  width: inherit;
+  height: 100%;
+  background: rgba(72, 199, 234, 0.075);
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%, 0 12%);
+}
+.image {
+  position: absolute;
+  top: $borderThickness; /* równe z border thickness */
+  left: $borderThickness; /* równe z border thickness */
+  width: calc(100% - $borderThickness * 2);
+  height: calc(100% - $borderThickness * 2);
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%, 0 12%);
+}
+
+.imageOverlay {
+  position: absolute;
+  top: $borderThickness; /* równe z border thickness */
+  left: $borderThickness; /* równe z border thickness */
+  width: calc(100% - $borderThickness * 2);
+  height: calc(100% - $borderThickness * 2);
+  background-color: rgba(2, 57, 70, 0.945);
+  clip-path: polygon(16% 0, 100% 0, 100% 100%, 0 100%, 0 12%);
+  background: linear-gradient(
+    0deg,
+    rgba(13, 67, 85, 0.5),
+    rgba(3, 105, 139, 0.767)
+  );
+  background: linear-gradient(
+      0deg,
+      rgba(13, 67, 85, 0.5),
+      rgba(3, 105, 139, 0.767)
+    ),
+    url("../images/hexagon.png");
+  background-size: 190%;
+  filter: saturate(0.8);
+  transition: all 0.5s ease-in-out;
+  overflow: hidden;
+
+  &:hover {
+    background-color: transparent;
+    background: transparent;
+    color: transparent;
+    user-select: none;
+    cursor: pointer;
+  }
+}
+
+.imageName {
+  position: absolute;
+  top: 100%;
+  transform: translateY(-100%);
+  width: 100%;
+  padding: 0.5rem 1.2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-wrap: wrap;
+  color: $colorMain;
+  background-color: rgba(0, 0, 0, 0.603);
+  border: none;
+
+  @include desktop {
+    display: none;
+  }
+}

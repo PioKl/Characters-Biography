@@ -1,0 +1,41 @@
+$bp-tablet: 48.0625em; //769px
+$bp-desktop: 64.0625em; //1025px
+$bp-desktop-medium: 85.4375em; //1367px
+$bp-desktop-large: 96.0625em; //1537px
+/* 
+==================================
+
+    RESOLUTIONS MIXINS
+
+==================================
+*/
+@mixin tablet {
+  @media (min-width: #{$bp-tablet}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$bp-desktop}) {
+    @content;
+  }
+}
+
+@mixin desktopMedium {
+  @media (min-width: #{$bp-desktop-medium}) {
+    @content;
+  }
+}
+
+@mixin desktopLarge {
+  @media (min-width: #{$bp-desktop-large}) {
+    @content;
+  }
+}
+
+:export {
+  bpTablet: $bp-tablet;
+  bpDesktop: $bp-desktop;
+  bpDesktopMedium: $bp-desktop-medium;
+  bpDesktopLarge: $bp-desktop-large;
+}

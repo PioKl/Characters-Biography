@@ -1,0 +1,148 @@
+@import "./Mixins.scss";
+@import "./Colors.scss";
+@import "./Resolutions.scss";
+
+.charactersBios {
+  height: 100%;
+}
+
+.charactersBiosContainer {
+  position: relative;
+  display: grid;
+  gap: 1rem;
+  margin-inline: auto;
+  max-width: 110rem;
+  z-index: 2;
+
+  &.--notFound {
+    grid-template-rows: auto 1fr;
+    height: 100%;
+  }
+}
+
+.characterNameAndSearchContainer {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  background: $backgroundColorTwo;
+
+  @include tablet {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.characterNameContainer {
+  display: grid;
+  gap: 1rem;
+  text-transform: uppercase;
+  &__profile {
+    color: #3d8ab4;
+    font-size: 1.3rem;
+  }
+
+  &__name {
+    font-size: 1.6rem;
+    color: $colorMain;
+    text-shadow: 0 0 13px $vivid-sky-blue;
+  }
+}
+
+.characterSearchContainer {
+  @include tablet {
+    min-width: 25rem;
+    margin-left: auto;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    font-size: 1.6rem;
+    background-color: rgba(255, 255, 255, 0.144);
+    border: none;
+    color: $colorMain;
+
+    &::placeholder {
+      color: $colorMain;
+      text-transform: uppercase;
+      text-align: center;
+      text-shadow: none;
+    }
+  }
+}
+
+.charactersCardsContainer {
+  @include grid-placeItems();
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  grid-auto-rows: minmax(24rem, 1fr);
+  gap: 2rem;
+
+  @media screen and (min-width: 439px) {
+    grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  }
+
+  @include tablet {
+    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  }
+
+  a {
+    width: 16rem;
+    height: 100%;
+
+    @media screen and (min-width: 377px) {
+      width: 100%;
+    }
+  }
+}
+
+.pagination {
+  @include flex-center();
+  background: $backgroundColorTwo;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  &__button {
+    font-size: 1.6rem;
+    width: 3rem;
+    height: 3rem;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: transparent;
+    font-weight: 600;
+    &:hover,
+    &:focus-visible {
+      cursor: pointer;
+      border: 2px solid $colorMain;
+    }
+    &:disabled {
+      color: white;
+      border: 2px solid $colorMain;
+    }
+
+    &.--arrow-left,
+    &.--arrow-right {
+      font-size: 1.3rem;
+      font-family: "Font Awesome 5 Free";
+      font-weight: 600;
+    }
+
+    &.--arrow-right {
+      &:after {
+        content: "\f054";
+      }
+    }
+    &.--arrow-left {
+      &:after {
+        content: "\f053";
+      }
+    }
+  }
+
+  &__dots {
+    font-size: 2rem;
+    width: 3rem;
+    padding: 0.5rem;
+    text-align: center;
+    user-select: none;
+  }
+}

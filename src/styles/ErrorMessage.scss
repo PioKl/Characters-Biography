@@ -1,0 +1,44 @@
+@import "./Mixins.scss";
+@import "./Resolutions.scss";
+
+.errorContainer {
+  @include grid-placeItems();
+  max-width: 110rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  &.--fullHeight {
+    margin: auto;
+    height: 100%;
+  }
+
+  @include desktop {
+    font-size: 3rem;
+  }
+
+  span {
+    display: grid;
+    gap: 2rem;
+    width: 100%;
+    text-align: center;
+    color: red;
+    text-shadow: 0 0 1.3rem red;
+    letter-spacing: 0.3rem;
+
+    @include tablet {
+      gap: 0;
+      grid-template-columns: repeat(3, auto);
+      align-items: center;
+    }
+
+    &:after,
+    &:before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 0.3rem;
+      background-color: red;
+    }
+  }
+}

@@ -1,0 +1,399 @@
+@import "./Mixins.scss";
+@import "./Colors.scss";
+@import "./Resolutions.scss";
+
+.decorationTwo {
+  display: none;
+  @include tablet {
+    position: fixed;
+    top: 58%;
+    display: flex;
+    opacity: 0;
+  }
+
+  @include desktop {
+    top: 55%;
+  }
+
+  @include desktopMedium {
+    top: 50%;
+  }
+}
+
+.decorationTwoContainer {
+  display: flex;
+  gap: 3rem;
+  width: fit-content;
+  height: fit-content;
+  padding: 2rem;
+  font-size: 1.6rem;
+  font-family: system-ui, sans-serif;
+  color: $vivid-sky-blue;
+  background-color: $backgroundColorOne;
+  cursor: default;
+  user-select: none;
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    height: 0.5rem;
+    background-color: $backgroundColorOne;
+    animation: drawBorderWidth 2s forwards;
+    animation-delay: 6s;
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 0.5rem;
+    background-color: $backgroundColorOne;
+    animation: drawBorderHeight 2s forwards;
+    animation-delay: 6s;
+  }
+}
+
+.decorationBytes {
+  display: none;
+  @include tablet {
+    position: fixed;
+    inset: 0;
+    top: 9.5%;
+    left: 22.5%;
+    transform: translate(-22.5%, -9.5%);
+    @include flex-center-vert();
+    gap: 1rem;
+    font-size: 1.5rem;
+    height: fit-content;
+    user-select: none;
+  }
+}
+.decorationBytesPartOne,
+.decorationBytesPartTwo {
+  padding: 0.5rem 1rem;
+  opacity: 0;
+}
+.decorationBytesPartOne {
+  background-color: $backgroundColorOne;
+  color: $vivid-sky-blue;
+}
+.decorationBytesPartTwo {
+  display: flex;
+  gap: 2rem;
+  color: rgb(43, 119, 139);
+  background-color: $backgroundColorOne;
+
+  &__span {
+    &--2,
+    &--3 {
+      margin-left: auto;
+    }
+  }
+}
+
+.decorationOneContainer {
+  position: fixed;
+  top: 75%;
+}
+
+.decorationBlocksContainer {
+  position: fixed;
+  left: 50%;
+  bottom: 6%;
+  transform: translateX(-50%);
+  @include flex-column();
+  gap: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+
+  @include tablet {
+    inset: 0;
+    top: 18%;
+    left: 98%;
+    transform: translate(-98%, -13%);
+    width: fit-content;
+    height: fit-content;
+    gap: 1.6rem;
+    font-size: 1.4rem;
+    user-select: none;
+    opacity: 0;
+  }
+
+  @include desktopMedium {
+    top: 13%;
+  }
+
+  &__span {
+    &.--system {
+      opacity: 0;
+      animation: showOpacity 0.5s forwards;
+      animation-delay: 2s;
+    }
+    &.--error {
+      color: red;
+      opacity: 0;
+      animation: showOpacity 0.5s forwards;
+      animation-delay: 3s;
+    }
+  }
+}
+
+.decorationBlocks {
+  display: flex;
+  align-items: flex-end;
+  gap: 1.5rem;
+  opacity: 0;
+  animation: showOpacity 1s forwards;
+  animation-delay: 2.5s;
+
+  @include desktop {
+    gap: 2rem;
+  }
+}
+
+.decorationBlock {
+  width: 2rem;
+  height: 20rem;
+  background-color: $backgroundColorOne;
+  transform: rotate(180deg);
+
+  &:after {
+    content: "";
+    display: block;
+    width: 2rem;
+    background-color: $vivid-sky-blue;
+    animation: drawHeight 2s forwards;
+    animation-delay: 3.3s;
+  }
+
+  &--2,
+  &--3 {
+    display: none;
+
+    @include desktopMedium {
+      display: block;
+    }
+  }
+
+  &--4 {
+    height: 15rem;
+  }
+  &--5 {
+    display: block;
+    height: 13rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+  &--6 {
+    height: 11rem;
+  }
+  &--7 {
+    display: block;
+    height: 9rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktopMedium {
+      display: block;
+    }
+  }
+  &--8 {
+    height: 8rem;
+  }
+  &--9 {
+    display: block;
+    height: 7rem;
+
+    @include tablet {
+      display: none;
+    }
+
+    @include desktop {
+      display: block;
+    }
+  }
+  &--10 {
+    height: 6rem;
+  }
+  &--11 {
+    display: none;
+    height: 5rem;
+
+    @include desktopMedium {
+      display: block;
+    }
+  }
+  &--12 {
+    height: 4rem;
+  }
+}
+
+.decorationMicroChip {
+  display: none;
+  @include tablet {
+    position: fixed;
+    bottom: 25%;
+    left: clamp(39.3rem, -29.983rem + 90.096vw, 143rem);
+    display: flex;
+    gap: 3rem;
+    width: 100%;
+    font-size: 1.3rem;
+    color: $vivid-sky-blue;
+    border-top: 0.2rem solid $vivid-sky-blue;
+    opacity: 0;
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-left: 1rem;
+    border-left: 0.2rem solid $vivid-sky-blue;
+  }
+
+  &__listItem {
+    position: relative;
+    @include flex-center-vert();
+    &:before {
+      font-family: "Font Awesome 5 Free";
+      content: "\f2db";
+      font-weight: 700;
+      margin-right: 1rem;
+      color: rgba(255, 255, 255, 0.479);
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      width: 1rem;
+      height: 0.2rem;
+      background-color: $vivid-sky-blue;
+      right: 100%;
+    }
+  }
+}
+
+.greetingsContainer {
+  position: fixed;
+  left: 50%;
+  top: 15%;
+  transform: translateX(-50%);
+  display: block;
+  @include tablet {
+    top: 20%;
+  }
+
+  &__h1 {
+    text-transform: uppercase;
+    font-size: 3.2rem;
+    font-weight: 700;
+    letter-spacing: 1rem;
+    color: white;
+    user-select: none;
+    opacity: 0;
+  }
+}
+
+.batLogoContainer {
+  position: fixed;
+  inset: 0;
+  width: fit-content;
+  height: fit-content;
+  margin: auto;
+
+  &.--off {
+    display: none;
+  }
+
+  .batLogo {
+    @include tablet {
+      width: clamp(34.2rem, -19.781rem + 70.196vw, 52.1rem);
+      height: clamp(11.6rem, -6.796rem + 23.922vw, 17.7rem);
+    }
+
+    @include desktop {
+      width: clamp(33.8rem, -66.386rem + 97.647vw, 67rem);
+      height: clamp(11.4rem, -22.699rem + 33.235vw, 22.7rem);
+    }
+
+    @include desktopMedium {
+      width: clamp(39.4rem, -91.946rem + 96.154vw, 74.4rem);
+      height: clamp(12rem, -37.536rem + 36.264vw, 25.2rem);
+    }
+  }
+}
+
+.systemActiveContainer {
+  display: none;
+  @include tablet {
+    position: fixed;
+    top: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    width: 35rem;
+    padding: 2.5rem;
+    background-color: $backgroundColorOne;
+    text-align: center;
+    opacity: 0;
+  }
+
+  @include desktop {
+    width: 40rem;
+  }
+
+  @include desktopMedium {
+    top: 75%;
+  }
+}
+
+.systemActive {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+@keyframes showOpacity {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drawBorderWidth {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes drawBorderHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@keyframes drawHeight {
+  from {
+    height: 0;
+  }
+  to {
+    height: 100%;
+  }
+}

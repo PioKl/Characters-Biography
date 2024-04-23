@@ -38,8 +38,10 @@ export default function Header() {
 
     //W przypadku gdy podany adres strony nie istnieje
     if (window.location.pathname !== `${process.env.PUBLIC_URL}`) {
-      localStorage.setItem("introRefresh", "false");
-      setIntroRefreshStorage(false);
+      if (window.location.pathname !== `${process.env.PUBLIC_URL}/`) {
+        localStorage.setItem("introRefresh", "false");
+        setIntroRefreshStorage(false);
+      }
     }
   }, [disableIntro, setDisableIntroStorage, setIntroRefreshStorage]);
 

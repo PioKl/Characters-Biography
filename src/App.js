@@ -1,5 +1,5 @@
 import { useRef, useEffect, useState } from "react";
-import { BrowserRouter as HashRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import IntroContextProvider from "./contexts/IntroContext";
 import "./styles/App.scss";
 import Intro from "./components/Intro";
@@ -48,7 +48,7 @@ function App() {
   return (
     <div className="App" ref={container}>
       <IntroContextProvider>
-        <HashRouter basename="/">
+        <Router basename={process.env.PUBLIC_URL}>
           <Header />
           <Intro />
           <main className="main">
@@ -78,7 +78,7 @@ function App() {
             </Routes>
           </main>
           <Footer />
-        </HashRouter>
+        </Router>
       </IntroContextProvider>
     </div>
   );

@@ -275,7 +275,7 @@ export default function Intro({ container }) {
         } ${(!introRefreshStorage || !firstTimeLoadDataStorage) && "--off"}`}
       >
         {!intro && !disableIntroStorage && (
-          <SnowEffect count={150} options={{ color: "red" }} intro={intro} />
+          <SnowEffect count={150} options={{ color: "white" }} intro={intro} />
         )}
 
         <div className="blockContainer">
@@ -286,9 +286,16 @@ export default function Intro({ container }) {
           </div>
         </div>
 
-        {!intro && !disableIntroStorage && (
+        {/*         {!intro && !disableIntroStorage && (
           <button className="introButton" onClick={handleIntroBegin}>
             Begin
+          </button>
+        )} */}
+        {!intro && !disableIntroStorage && (
+          <button className="introButton" onClick={handleIntroBegin}>
+            <span title="Begin" className="glitch">
+              Begin
+            </span>
           </button>
         )}
       </div>

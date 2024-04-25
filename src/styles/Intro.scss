@@ -30,6 +30,10 @@
   text-transform: uppercase;
   cursor: pointer;
 
+  -webkit-box-shadow: 0px 0px 5px 1.5px $vivid-sky-blue;
+  -moz-box-shadow: 0px 0px 5px 1.5px $vivid-sky-blue;
+  box-shadow: 0px 0px 5px 1.5px $vivid-sky-blue;
+
   &:hover {
     text-shadow: 0 0 0.6rem $vivid-sky-blue, 0 0 1.5rem $vivid-sky-blue,
       -0.2rem 0.1rem 1rem $vivid-sky-blue, 0.2rem 0.1rem 1rem $vivid-sky-blue,
@@ -38,7 +42,38 @@
     -webkit-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
     -moz-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
     box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+
+    > .glitch {
+      animation: glitch 1s linear infinite;
+
+      &::before,
+      &::after {
+        content: attr(title);
+        position: absolute;
+        left: 0;
+        text-shadow: none;
+      }
+
+      &:before {
+        animation: glitchTop 1s linear infinite;
+        clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+      }
+
+      &::after {
+        animation: glitchBotom 1.5s linear infinite;
+        clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+      }
+    }
   }
+}
+
+.glitch {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
 }
 
 .snow {
@@ -46,6 +81,10 @@
   height: 100%;
   width: 100%;
   z-index: 2;
+
+  box-shadow: inset rgba(60, 70, 85, 0.5) 0px 0px 40px 0px,
+    inset rgba(60, 70, 85, 0.5) 0px 0px 40px 0px,
+    inset rgba(0, 0, 0, 1) 0px 0px 36px -24px;
 }
 
 .blockOverlay {
@@ -139,4 +178,46 @@
 
 .block-20 {
   left: 95%;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: skew(0deg);
+  }
+  4%,
+  60% {
+    transform: skew(0deg);
+  }
+  62% {
+    transform: skew(5deg);
+  }
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
 }

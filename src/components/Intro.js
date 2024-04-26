@@ -26,6 +26,16 @@ export default function Intro({ container }) {
 
     gsap.from(".block", { width: "100%", duration: 0 });
     gsap.to(".block", { width: "0%", duration: 3.5 });
+    gsap.to(".fogContainer", {
+      opacity: 0,
+      delay: 2,
+      duration: 1,
+    });
+    gsap.to(".fogContainer", {
+      display: "none",
+      delay: 3,
+      duration: 0,
+    });
 
     if (window.innerWidth > emToPixels(resolution.bpTablet)) {
       gsap.from(".batLogo", { scale: 0.5, opacity: 0, duration: 4 });
@@ -286,11 +296,11 @@ export default function Intro({ container }) {
           </div>
         </div>
 
-        {/*         {!intro && !disableIntroStorage && (
-          <button className="introButton" onClick={handleIntroBegin}>
-            Begin
-          </button>
-        )} */}
+        <div className="fogContainer">
+          <div className="fogImg --first"></div>
+          <div className="fogImg --second"></div>
+        </div>
+
         {!intro && !disableIntroStorage && (
           <button className="introButton" onClick={handleIntroBegin}>
             <span title="Begin" className="glitch">

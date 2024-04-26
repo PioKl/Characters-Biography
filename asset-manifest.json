@@ -1,19 +1,21 @@
 {
   "files": {
-    "main.css": "/Characters-Biography/static/css/main.79d3cb74.css",
-    "main.js": "/Characters-Biography/static/js/main.d6501eaa.js",
+    "main.css": "/Characters-Biography/static/css/main.5f3b5642.css",
+    "main.js": "/Characters-Biography/static/js/main.fffb8330.js",
     "static/js/787.6bb2f1aa.chunk.js": "/Characters-Biography/static/js/787.6bb2f1aa.chunk.js",
+    "static/media/fog-1.png": "/Characters-Biography/static/media/fog-1.f941d9347efb2a3e7d1d.png",
+    "static/media/fog-2.png": "/Characters-Biography/static/media/fog-2.8aeda6af6c952275e3de.png",
     "static/media/hexagon.png": "/Characters-Biography/static/media/hexagon.4b81cfa32bbf4dd75a0a.png",
     "index.html": "/Characters-Biography/index.html",
     "static/media/github.svg": "/Characters-Biography/static/media/github.b40b1c0378274f892133dea1253e8aa8.svg",
     "static/media/batModernAlt.svg": "/Characters-Biography/static/media/batModernAlt.7429a3924d56af232e64198acb55d81b.svg",
     "static/media/batModern.svg": "/Characters-Biography/static/media/batModern.bc98f8e4d636b35ee444114507d0cbde.svg",
-    "main.79d3cb74.css.map": "/Characters-Biography/static/css/main.79d3cb74.css.map",
-    "main.d6501eaa.js.map": "/Characters-Biography/static/js/main.d6501eaa.js.map",
+    "main.5f3b5642.css.map": "/Characters-Biography/static/css/main.5f3b5642.css.map",
+    "main.fffb8330.js.map": "/Characters-Biography/static/js/main.fffb8330.js.map",
     "787.6bb2f1aa.chunk.js.map": "/Characters-Biography/static/js/787.6bb2f1aa.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.79d3cb74.css",
-    "static/js/main.d6501eaa.js"
+    "static/css/main.5f3b5642.css",
+    "static/js/main.fffb8330.js"
   ]
 }

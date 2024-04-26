@@ -30,18 +30,34 @@
   text-transform: uppercase;
   cursor: pointer;
 
-  -webkit-box-shadow: 0px 0px 5px 1.5px $vivid-sky-blue;
-  -moz-box-shadow: 0px 0px 5px 1.5px $vivid-sky-blue;
-  box-shadow: 0px 0px 5px 1.5px $vivid-sky-blue;
+  -webkit-box-shadow: -0.7px 0px 5px 3px $vivid-sky-blue;
+  -moz-box-shadow: -0.7px 0px 5px 3px $vivid-sky-blue;
+  box-shadow: -0.7px 0px 5px 3px $vivid-sky-blue;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    -webkit-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+    -moz-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+    box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+  }
 
   &:hover {
     text-shadow: 0 0 0.6rem $vivid-sky-blue, 0 0 1.5rem $vivid-sky-blue,
       -0.2rem 0.1rem 1rem $vivid-sky-blue, 0.2rem 0.1rem 1rem $vivid-sky-blue,
       0 -0.5rem 2rem $vivid-sky-blue, 0 0.5rem 3rem $vivid-sky-blue;
 
-    -webkit-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
-    -moz-box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
-    box-shadow: 0px 0px 5px 3px $vivid-sky-blue;
+    &:after {
+      opacity: 1;
+    }
 
     > .glitch {
       animation: glitch 1s linear infinite;
